@@ -1,0 +1,13 @@
+.card-wrap {
+  width:300px;
+  margin: auto;
+  text-align: center;
+}
+
+.location {
+
+}
+
+.current-forecast {
+  text-align: left;
+}
