@@ -1,7 +1,9 @@
 .card-wrap {
-  width:300px;
-  margin: auto;
+  width:150px;
+  margin: 10px 20px;
   text-align: center;
+  display: inline-block;
+  border:1px solid blue;
 }
 
 .location {
