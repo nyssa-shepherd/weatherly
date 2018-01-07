@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import SevenHour from '../lib/SevenHour.js';
+import Card from '../lib/Card.js'
 
 const mockArray = [
   {hour: "7:00 AM", icon: "http://icons.wxug.com/i/c/k/cloudy.gif", tempF: "36"},
@@ -19,15 +20,8 @@ describe.only('SevenHour', () => {
     wrapper = shallow(<SevenHour />)
   })
 
-   it('should exist', () => {
-    const SevenHour = shallow(<SevenHour forecast={mockArray}/>);
-    expect(SevenHour).toBeDefined();
-  });
-
-  it('should render a h2', () => {
-    console.log(wrapper)
-    expect(wrapper.find('h2').length).toEqual(1);
-    
+  it('should exist', () => {
+    expect(Card.wrapper).toBeDefined();
   })
 
 })
