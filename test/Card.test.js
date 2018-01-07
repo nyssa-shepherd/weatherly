@@ -14,4 +14,20 @@ describe('Card', () => {
     expect(wrapper).toBeDefined();
   })
 
+  it('should have an article component', () => {
+    expect(wrapper.find('article').length).toEqual(1);
+  })
+
+  it('should have a h3 component', () => {
+    expect(wrapper.find('h3').length).toEqual(1);
+  })
+
+  it('should have a img component', () => {
+    expect(wrapper.find('img').length).toEqual(2);
+  })
+
+  it('should have a h2 component', () => {
+    expect(wrapper.find('h2').length).toEqual(1);
+  })
+
 })

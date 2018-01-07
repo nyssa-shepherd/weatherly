@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import SevenHour from '../lib/SevenHour.js';
+import Card from '../lib/Card.js'
 
 describe('SevenHour', () => {
   
@@ -10,8 +11,8 @@ describe('SevenHour', () => {
     wrapper = shallow(<SevenHour />)
   })
 
-  it.skip('should exist', () => {
-    expect(wrapper).toBeDefined();
+  it('should exist', () => {
+    expect(Card.wrapper).toBeDefined();
   })
 
 })

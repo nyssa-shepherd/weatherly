@@ -18,6 +18,15 @@ const mockData = {
   summary: "Sunny"
 };
 
+const mockCitites = [
+  'Denver, CO',
+  'Chicago, IL',
+  'Tampa, FL',
+  'San Fransisco, CA',
+  'New York City, NY',
+  'Dallas, TX'
+];
+
 describe.only('ChangeCity', () => {
   let wrapper;
 
@@ -45,9 +54,9 @@ describe.only('ChangeCity', () => {
 
   it('should populate the binary trie with the cities from the cities array', () => {
     wrapper.searchComplete = new Trie()
-    expect(wrapper.searchComplete).toEqual(new Trie())
-    // this.searchComplete.populate(cities);
-    // expect(wrapper.searchComplelte).toEqual()
+    expect(wrapper.searchComplete).toEqual(new Trie(mockCitites))
+    // wrapper.searchComplete.populate(mockCitites);
+    // expect(wrapper.searchComplelte).toEqual(['Denver, CO', 'Chicago, IL', 'Tampa, FL', 'San Fransisco, CA', 'New York City, NY', 'Dallas, TX'])
   })
 
   it('should change the state of location based on a change in the input value', () => {
@@ -58,6 +67,7 @@ describe.only('ChangeCity', () => {
 
   it('should change the state of suggestedWord after a change in the input value', () => {
     //handleInputChange
+    console.log(global.localStorage)
   })
 
   it('should split the word entered at the comma after the sumbit button is hit', () => {
@@ -71,19 +81,17 @@ describe.only('ChangeCity', () => {
     let splitName = wrapper.state().location.split(', ');
 
     expect(wrapper.state().city).toEqual('');
-    wrapper.setState({city: splitName[0]})
+    wrapper.setState({city: splitName[0]});
+    expect(wrapper.state().city).toEqual('Denver');
   })
 
   it('should set the state of stateName to splitName[1]', () => {
-    //handleButtonClick
-  })
+    wrapper.setState({location: mockData.location});
+    let splitName = wrapper.state().location.split(', ');
 
-  it('should send the city and stateName to local storage', () => {
-    //handleButtonClick
-  })
-
-  it('should get the api based off of the city and stateName', () => {
-    //handleButtonClick
+    expect(wrapper.state().stateName).toEqual('');
+    wrapper.setState({stateName: splitName[1]});
+    expect(wrapper.state().stateName).toEqual('CO');
   })
 
   it('should render a datalist and input', () => {
