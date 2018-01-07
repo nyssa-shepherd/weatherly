@@ -18,7 +18,7 @@ const mockData = {
   summary: "Sunny"
 };
 
-describe.only('ChangeCity', () => {
+describe.skip('ChangeCity', () => {
   let wrapper;
 
   beforeEach(() => {
