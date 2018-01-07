@@ -18,6 +18,7 @@ const mockData = {
   summary: "Sunny"
 };
 
+
 const mockCitites = [
   'Denver, CO',
   'Chicago, IL',
@@ -28,6 +29,7 @@ const mockCitites = [
 ];
 
 describe.only('ChangeCity', () => {
+
   let wrapper;
 
   beforeEach(() => {
