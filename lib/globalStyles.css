@@ -1,0 +1,42 @@
+* { text-transform: capitalize; 
+  font-family: 'Roboto', sans-serif;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+body {
+  background: #e1ffff;
+  background: -moz-linear-gradient(top, #e1ffff 0%, #fdffff 0%, #e1ffff 7%, #e1ffff 12%, #e6f8fd 30%, #c8eefb 54%, #bee4f8 75%, #b1d8f5 100%);
+  background: -webkit-linear-gradient(top, #e1ffff 0%,#fdffff 0%,#e1ffff 7%,#e1ffff 12%,#e6f8fd 30%,#c8eefb 54%,#bee4f8 75%,#b1d8f5 100%);
+  background: linear-gradient(to bottom, #e1ffff 0%,#fdffff 0%,#e1ffff 7%,#e1ffff 12%,#e6f8fd 30%,#c8eefb 54%,#bee4f8 75%,#b1d8f5 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e1ffff', endColorstr='#b1d8f5',GradientType=0 );
+  
+}
+
+#app {
+  padding:20px;
+}
+.change-city{
+  text-align: center;
+}
+
+.ten-day {}
+
+label {
+  display: none;
+}
+
+.current-forecast {
+  text-align: center;
+}
+
+h3 {
+  margin: auto;
+}
+
+h2 img{
+  vertical-align: middle;
+    margin-right: 20px;
+}
