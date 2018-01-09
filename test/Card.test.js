@@ -26,8 +26,4 @@ describe('Card', () => {
     expect(wrapper.find('img').length).toEqual(2);
   })
 
-  it('should have a h2 component', () => {
-    expect(wrapper.find('h2').length).toEqual(1);
-  })
-
 })

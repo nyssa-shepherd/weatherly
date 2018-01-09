@@ -12,6 +12,10 @@
   box-shadow: 4px 4px 11px -4px rgba(0,0,0,0.26);
 }
 
+.card-wrap h3{
+  color: black;
+}
+
 
 .current-forecast {
   text-align: left;
