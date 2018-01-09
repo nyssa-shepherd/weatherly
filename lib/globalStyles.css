@@ -6,23 +6,52 @@ textarea:focus, input:focus{
     outline: none;
 }
 
-body {
-  background: #e1ffff;
-  background: -moz-linear-gradient(top, #e1ffff 0%, #fdffff 0%, #e1ffff 7%, #e1ffff 12%, #e6f8fd 30%, #c8eefb 54%, #bee4f8 75%, #b1d8f5 100%);
-  background: -webkit-linear-gradient(top, #e1ffff 0%,#fdffff 0%,#e1ffff 7%,#e1ffff 12%,#e6f8fd 30%,#c8eefb 54%,#bee4f8 75%,#b1d8f5 100%);
-  background: linear-gradient(to bottom, #e1ffff 0%,#fdffff 0%,#e1ffff 7%,#e1ffff 12%,#e6f8fd 30%,#c8eefb 54%,#bee4f8 75%,#b1d8f5 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e1ffff', endColorstr='#b1d8f5',GradientType=0 );
-  
+html{
+  height: 100%
+}
+
+body{
+
+ background-color:#1C3863;
+ filter:progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorstr=#1C3863, endColorstr=#282959);
+ background-image:-moz-linear-gradient(left bottom, #1C3863 0%, #282959 25%,#9F7A6E 100%);
+ background-image:linear-gradient(left bottom, #1C3863 0%, #282959 25%,#9F7A6E 100%);
+ background-image:-webkit-linear-gradient(left bottom, #1C3863 0%, #282959 25%,#9F7A6E 100%);
+ background-image:-o-linear-gradient(left bottom, #1C3863 0%, #282959 25%,#9F7A6E 100%);
+ background-image:-ms-linear-gradient(left bottom, #1C3863 0%, #282959 25%,#9F7A6E 100%);
+ background-image:-webkit-gradient(linear, left bottom, right top, color-stop(0%,#1C3863), color-stop(25%,#282959),color-stop(100%,#9F7A6E));
+ background-repeat: no-repeat;
+ height: 100%;
+ overflow: hidden;
+}
+
+.moduleWrap {
+  position: absolute;
+    bottom: 0;
+    height: 270px;
+    overflow: auto;
+    display: block;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.city-name{
+  color: white;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 100;
+  font-size: 40px;
+}
+
+.change-city {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 #app {
   padding:20px;
-}
-.change-city{
-  text-align: center;
+  height: 100%;
 }
 
-.ten-day {}
 
 label {
   display: none;
@@ -34,6 +63,7 @@ label {
 
 h3 {
   margin: auto;
+  color: white;
 }
 
 h2 img{
