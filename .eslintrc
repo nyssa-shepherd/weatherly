@@ -24,6 +24,7 @@
     ],
     "curly": "error",
     "eqeqeq": ["error", "always"],
+
     "indent": ["warn", 2],
     "key-spacing": [
       "error", {
