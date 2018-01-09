@@ -60,14 +60,14 @@
 }
 
 .seven-hour-wrap {
-  min-width: 130%;
+  min-width: 1235px;
   padding-top: 25px;
   text-align: center;
 }
 
 .ten-day {
+  min-width: 1745px;
   padding-top: 25px;
-  min-width: 184%;
   text-align: center;
 }
 
