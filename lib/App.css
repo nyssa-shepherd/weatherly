@@ -6,7 +6,7 @@
   overflow: hidden;
   margin: auto;
   display: block;
-  background-image: url(./images/mexico.jpg);
+  background-image: url(./images/Sandone.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 10px;
@@ -15,7 +15,62 @@
   box-shadow: 4px 4px 11px -4px rgba(0,0,0,0.26);
 }
 
+.tabs{
+  background-color: white;
+  position: absolute;
+  bottom: 270px;
+  margin:0;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.6);
+}
    
+.tabs li{
+  display: inline-block;
+}
+
+.tabs a{
+  padding: 10px 20px;
+  font-size: 20px;
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+
+.tabs a:hover {
+  border-bottom: 3px solid black;
+}
+
+.tabs a.active{
+  background-color: white;
+  border-bottom: 3px solid black;
+}
+/*
+::-webkit-scrollbar { 
+    display: none; 
+}
+*/
+.module-wrap {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 270px;
+  overflow-x: auto;
+  display: block;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.seven-hour-wrap {
+  min-width: 130%;
+  padding-top: 25px;
+  text-align: center;
+}
+
+.ten-day {
+  padding-top: 25px;
+  min-width: 184%;
+  text-align: center;
+}
+
 h1 {
   color: white;
 }
