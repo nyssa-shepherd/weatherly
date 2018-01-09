@@ -36,10 +36,6 @@
   color: black;
 }
 
-.tabs a:hover {
-  border-bottom: 3px solid black;
-}
-
 .tabs a.active{
   background-color: white;
   border-bottom: 3px solid black;
