@@ -4,16 +4,6 @@ import ChangeCity from '../lib/ChangeCity.js';
 import { Trie } from '@rvwatch/completeMe';
 import MockData from './MockData';
 
-
-const mockCitites = [
-  'Denver, CO',
-  'Chicago, IL',
-  'Tampa, FL',
-  'San Fransisco, CA',
-  'New York City, NY',
-  'Dallas, TX'
-];
-
 describe('ChangeCity', () => {
 
   let wrapper;
@@ -36,25 +26,34 @@ describe('ChangeCity', () => {
     wrapper.searchComplete = new Trie()
   })
 
-  it('should populate the binary trie with the cities from the cities array', () => {
-    wrapper.searchComplete = new Trie()
-    expect(wrapper.searchComplete).toEqual(new Trie(mockCitites))
-    wrapper.searchComplete.populate(mockCitites);
-    expect(wrapper.searchComplelte).toEqual(['Denver, CO', 'Chicago, IL', 'Tampa, FL', 'San Fransisco, CA', 'New York City, NY', 'Dallas, TX'])
+  it('should update state with a location', () => {
+    expect(wrapper.state().location).toEqual('')
+    wrapper.setState({ location: 'Denver, CO' })
+    expect(wrapper.state().location).toEqual('Denver, CO');
   })
 
-  it.skip('should change the state of location based on a change in the input value', () => {
-
+  it('should update state with suggestions', () => {
+    expect(wrapper.state().suggestedWord).toEqual([])
+    wrapper.setState({ suggestedWord  : ['Denver, CO', 'Dayton, OH', 'Dallas, TX', 'Daytona Beach, FL', 'Douglas, AL'] })
+    expect(wrapper.state().suggestedWord).toEqual(['Denver, CO', 'Dayton, OH', 'Dallas, TX', 'Daytona Beach, FL', 'Douglas, AL']);
   })
 
-  it.skip('should change the state of suggestedWord after a change in the input value', () => {
-    //handleInputChange
-    console.log(global.localStorage)
-  })
-
-
-  it.skip('should render a datalist and input', () => {
+  it('should render a datalist and input', () => {
     expect(wrapper.find('datalist').length).toEqual(1);
     expect(wrapper.find('input').length).toEqual(1);
+  })
+
+  it('should 5 option elements when state has suggestions', () => {
+    expect(wrapper.find('option').length).toEqual(0)
+    wrapper.setState({ location: 'Denver, CO' })
+    wrapper.setState({ suggestedWord: ['Denver, CO', 'Dayton, OH', 'Dallas, TX', 'Daytona Beach, FL', 'Douglas, AL'] })
+    expect(wrapper.find('option').length).toEqual(5)
+  })
+
+
+  it('should set the location state when user types in a location', () => {
+    expect(wrapper.state().location).toEqual('')
+    wrapper.find('input').simulate('change', {target: {value: 'Denver, CO'}})
+    expect(wrapper.state().location).toEqual('Denver, CO')
   })
 })

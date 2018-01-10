@@ -35,23 +35,14 @@ describe('App', () => {
     expect(wrapper).toBeDefined();
   })
 
-  it('should have a default state of weather data equal to null', () => {
+  it('should have a default state of weatherData, error, and showForecast', () => {
     expect(wrapper.state().weatherData).toEqual(null);
-  })
-
-  it('should have a default state of weather data equal to null', () => {
+    expect(wrapper.state().showForecast).toEqual(true);
     expect(wrapper.state().error).toEqual(false);
   })
 
   it('should render the Welcome component if localStorage returns null', () => {
     expect(wrapper.find('Welcome').length).toEqual(1);
-  })
-
-  it('should render the Error component if this.state.data = true', () => {
-    wrapper.setState({error: true});
-    expect(wrapper.state().error).toEqual(true);
-    
-    expect(wrapper.find('Error').length).toEqual(1);
   })
 
   it('should render the ChangeCity Component', () => {
@@ -74,22 +65,21 @@ describe('App', () => {
     expect(wrapper.find('CurrentWeather').length).toEqual(1)
   })
 
-  it('should render the SevenHour Component', () => {
+  it('should render the SevenHour Component if showForecast = true', () => {
     localStorage.setItem('Location', {
-      "location": "Denver, C0", 
-      "suggestions": []
+      "Location": "Denver, C0"
     });
 
-    wrapper.setState({ weatherData: MockData })
+    wrapper.setState({ weatherData: MockData, showForecast: true })
     expect(wrapper.find('SevenHour').length).toEqual(1)
   })
 
-  it('should render the TenDay Component', () => {
+  it('should render the TenDay Component if showForecast = false', () => {
     localStorage.setItem('Location', {
-      "location": "Denver, C0", 
-      "suggestions": []
+      "Location": "Denver, C0"
     });
-    wrapper.setState({ weatherData: MockData })
+
+    wrapper.setState({ weatherData: MockData, showForecast: false })
     expect(wrapper.find('TenDay').length).toEqual(1)
   })
 
