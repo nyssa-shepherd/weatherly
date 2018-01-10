@@ -14,21 +14,13 @@ describe('Welcome', () => {
     expect(wrapper).toBeDefined();
   })
 
-  it('should have a default state of city, stateName, and location equal to an empty string', () => {
-    expect(wrapper.state().city).toEqual('');
-    expect(wrapper.state().stateName).toEqual('');
-    expect(wrapper.state().location).toEqual('');
+  it('should render the h1 component', () => {
+    expect(wrapper.find('h1').length).toEqual(1)
+    expect(wrapper.find('h1').first().text()).toEqual('You must be in a basement somewhere...')
   })
 
-  it('should have a default state suggestedWord equal to an empty array', () => {
-    expect(wrapper.state().suggestedWord).toEqual([]);
-  })
-
-  it('should render an article, h1, input, and button component', () => {
-    expect(wrapper.find('article').length).toEqual(1);
-    expect(wrapper.find('h1').length).toEqual(1);
-    expect(wrapper.find('input').length).toEqual(1);
-    expect(wrapper.find('button').length).toEqual(1);
+  it('should render the ChangeCity component', () => {
+    expect(wrapper.find('ChangeCity').length).toEqual(1)
   })
 
 })
