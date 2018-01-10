@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import App from '../lib/App.js';
-import MockData from '../lib/MockData';
+import MockData from './MockData';
 
 global.localStorage = {
   getItem(keyword) {
@@ -39,36 +39,58 @@ describe('App', () => {
     expect(wrapper.state().weatherData).toEqual(null);
   })
 
-  it('should get the location from local storage and split it at the comma', () => {
+  it('should have a default state of weather data equal to null', () => {
+    expect(wrapper.state().error).toEqual(false);
+  })
+
+  it('should render the Welcome component if localStorage returns null', () => {
+    expect(wrapper.find('Welcome').length).toEqual(1);
+  })
+
+  it('should render the Error component if this.state.data = true', () => {
+    wrapper.setState({error: true});
+    expect(wrapper.state().error).toEqual(true);
     
+    expect(wrapper.find('Error').length).toEqual(1);
   })
 
   it('should render the ChangeCity Component', () => {
-    expect(wrapper.state().weatherData).toEqual(null);
-    wrapper.setState({weatherData: MockData});
-    expect(wrapper.state().weatherData).toEqual(MockData);
-    expect(wrapper.find('ChangeCity').length).toEqual(1);
+    localStorage.setItem('Location', {
+      "location": "Denver, C0", 
+      "suggestions": []
+    });
+
+    wrapper.setState({ weatherData: MockData })
+    expect(wrapper.find('ChangeCity').length).toEqual(1)
   })
 
   it('should render the CurrentWeather Component', () => {
-    expect(wrapper.state().weatherData).toEqual(null);
-    wrapper.setState({weatherData: MockData});
-    expect(wrapper.state().weatherData).toEqual(MockData);
-    expect(wrapper.find('CurrentWeather').length).toEqual(1);
+    localStorage.setItem('Location', {
+      "location": "Denver, C0", 
+      "suggestions": []
+    });
+
+    wrapper.setState({ weatherData: MockData })
+    expect(wrapper.find('CurrentWeather').length).toEqual(1)
   })
 
   it('should render the SevenHour Component', () => {
-    expect(wrapper.state().weatherData).toEqual(null);
-    wrapper.setState({weatherData: MockData});
-    expect(wrapper.state().weatherData).toEqual(MockData);
-    expect(wrapper.find('SevenHour').length).toEqual(1);
+    localStorage.setItem('Location', {
+      "location": "Denver, C0", 
+      "suggestions": []
+    });
+
+    wrapper.setState({ weatherData: MockData })
+    expect(wrapper.find('SevenHour').length).toEqual(1)
   })
 
   it('should render the TenDay Component', () => {
-    expect(wrapper.state().weatherData).toEqual(null);
-    wrapper.setState({weatherData: MockData});
-    expect(wrapper.state().weatherData).toEqual(MockData);
-    expect(wrapper.find('TenDay').length).toEqual(1);
+    localStorage.setItem('Location', {
+      "location": "Denver, C0", 
+      "suggestions": []
+    });
+    wrapper.setState({ weatherData: MockData })
+    expect(wrapper.find('TenDay').length).toEqual(1)
   })
 
 })
